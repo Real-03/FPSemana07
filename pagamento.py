@@ -16,7 +16,7 @@ class CartaoCredito(Pagamento):
         self.ccv = ccv
     
     def processar_pagamento(self, amount):
-        print(f"€{amount} com Cartão de Crédito ({self.numero_cartao})")
+        print(f"€{amount:.2f} com Cartão de Crédito ({self.numero_cartao})")
     
 
 class TransferenciaBancaria(Pagamento):
@@ -28,7 +28,7 @@ class TransferenciaBancaria(Pagamento):
 
 
     def processar_pagamento(self, amount):
-        print(f"€{amount} com Transferência Bancária (banco: {self.banco}, conta: {self.conta})")
+        print(f"€{amount:.2f} com Transferência Bancária (banco: {self.banco}, conta: {self.conta})")
 
 
 class PayPal(Pagamento):
@@ -37,7 +37,7 @@ class PayPal(Pagamento):
         self.email = email
 
     def processar_pagamento(self, amount):
-        print(f"€{amount} com Paypal (e-mail: {self.email})")
+        print(f"€{amount:.2f} com PayPal (e-mail: {self.email})")
 
 
 def realizar_pagamento(pagamento, amount):
