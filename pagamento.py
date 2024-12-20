@@ -3,9 +3,8 @@ import json
 class Pagamento:
 
 
-    def processar_pagamento(self, inimigo):
-        inimigo.vida -= self.ataque
-        print(f"{self.nome} Ataca {inimigo.nome} e Causa {self.ataque} de Dano!")
+    def processar_pagamento(self):
+        pass
 
 
 class CartaoCredito(Pagamento):
@@ -44,7 +43,7 @@ class PayPal(Pagamento):
 def realizar_pagamento(pagamento, amount):
     pagamento.processar_pagamento(amount)
 
-cartao_credito = CartaoCredito(numero_cartao="1234 5678 9012 3456", nome_titular="Jo~ao Silva",
+cartao_credito = CartaoCredito(numero_cartao="1234 5678 9012 3456", nome_titular="João Silva",
 validade="12/25", ccv="123")
 paypal = PayPal(email="joao.silva@email.com")
 transferencia = TransferenciaBancaria(banco="Banco Central", agencia="1234", conta="12345678")
